@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/weather02-512.webp" type="image/x-icon">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <h1 id="titleText">Weather App</h1>
+            <div id="tab-container">
+                <p class="tab yourWeatherBtn" data-userCoordinatesWeather>Your Weather</p>
+                <p class="tab searchCityWeatherBtn" data-userCityWeather>Search Weather</p>
+            </div>
+            <!-- SEARCH WEATHER BY CITY NAME PAGE -->
+                <form class="form-container" data-searchForm>
+                    <input placeholder="Search For City..." data-searchInput>
+                    <button class="btn" type="submit">
+                        <img src="assets/search.png" width="20" height="20" loading="lazy">
+                    </button>
+                </form>
+    
+            <!-- NOT FOUND DIV -->
+            <div class="notFound">
+                <img src="assets/not-found.png" width="30%">
+                <p>Location Data Not available</p>
+            </div>
+    
+            <div class="weatherContainer">
+                <!-- GRANT LOCATION SECTION -->
+                <div id="grantLocationAccessPage">
+                    <img src="assets/location.png" width="80" height="80" loading="lazy">
+                    <div class="grantLocationTextContent">
+                        <h2>Grant Location Access</h2>
+                        <p>Allow Access to get Weather information</p>
+                    </div>
+                    <button class="btn" data-grantLocationAccess>Grant Access</button>
+                </div>
+    
+                <!-- LOADING SCREEN PAGE -->
+                <div id="loadingScreenPage">
+                    <img src="assets/loading.gif" width="150" height="150">
+                    <p>Loading</p>
+                </div>
+    
+                <!-- COORDINATES WEATHER PAGE -->
+                <div id="coordinatesPage">
+                    <div class="cityInfo">
+                        <p data-cityName></p>
+                        <img data-countryIcon height="30px" width="30px">
+                    </div>
+                    <p data-weatherDesc class="weatherDesc"></p>
+                    <img data-weatherIcon class="weatherIcon" height="90px" width="90px">
+                    <p data-temperature class="weatherTemp"></p>
+                    <div class="weatherInfo">
+                        <div class="info windspeed">
+                            <img src="assets/wind.png" height="50px" width="50px">
+                            <p>Windspeed</p>
+                            <p data-windSpeed></p>
+                        </div>
+                        <div class="info humidity">
+                            <img src="assets/humidity.png" height="50px" width="50px">
+                            <p>Humidity</p>
+                            <p data-humidity></p>
+                        </div>
+                        <div class="info clouds">
+                            <img src="assets/cloud.png" height="50px" width="50px">
+                            <p>Clouds</p>
+                            <p data-clouds></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="redirectDiv">
+            <button class="redirect">
+              <p class="tooltip">Click On Me I'll Redirect You to Homepage</p>
+              <a href="https://therohitgupta.github.io/Rohit-Gupta/" target="_blank"><img src="hacker.png" alt="" width="50px" height="50px"></a>
+            </button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

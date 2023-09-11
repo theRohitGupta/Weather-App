@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+.container{
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media screen and (max-width: 501px) {
+    .container{
+        width: 90%;
+        min-width: 320px;
+    }
+    #titleText{
+        padding: 0 !important;
+        padding-top: 2rem !important;
+    }
+    #tab-container{
+        padding: 1rem 0 !important;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .tab{
+        width: 100%;
+        text-align: center;
+    }
+    .form-container{
+        padding-top: 1rem !important;
+    }
+    .weatherInfo{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .weatherInfo div p{
+        font-size: 1rem !important;
+    }
+    .info{
+        width: 100% !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    #coordinatesPage{
+        padding: 1.5rem 1rem !important;
+    }
+    .cityInfo p{
+        font-size: 2rem !important;
+    }
+    .weatherDesc{
+        font-size: 1.5rem !important;
+    }
+    .weatherTemp{
+        font-size: 2.25rem !important;
+    }
+}
+#titleText{
+    text-align: center;
+    padding: 2rem 0;
+    word-spacing: 2px;
+    letter-spacing: 1.75px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+#tab-container{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 80%;
+}
+.tab{
+    color: white;
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    transition: all 0.3s ease;
+}
+.tab.current-tab{
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 4px;
+}
+.active{
+    scale: 1;
+    opacity: 1;
+}
+.weatherContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+#grantLocationAccessPage{
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+#grantLocationAccessPage.active{
+    display: flex;
+}
+.grantLocationTextContent{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+}
+.grantLocationTextContent h2{
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+.grantLocationTextContent p{
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.75px;
+}
+#grantLocationAccessPage button{
+    all:unset;
+    color: white;
+    font-size: 0.85rem;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #3F72AF;
+    border-radius: 4px;
+}
+#loadingScreenPage{
+    padding: 2rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+#loadingScreenPage.active{
+    display: flex;
+}
+#loadingScreenPage p{
+    text-align: center;
+    color: white;
+}
+
+#coordinatesPage{
+    padding: 2rem 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    display: none;
+}
+#coordinatesPage.active{
+    display: flex;
+}
+.cityInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.cityInfo p{
+    font-size: 2rem;
+    font-weight: 200;
+    color: white;
+}
+.weatherDesc{
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: white;
+}
+.weatherTemp{
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: white;
+}
+.weatherInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: 1rem;
+}
+.weatherInfo div{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+.weatherInfo div p{
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: white;
+    text-transform: uppercase;
+}
+.form-container{
+    display: none;
+    padding-top: 2rem;
+    width: 80%;
+    justify-content: space-between;
+}
+.form-container.active{
+    display: flex;
+}
+.form-container input{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    width: calc(100% - 50px);
+    border: none;
+}
+.form-container input:focus{
+    border: 0;
+    caret-color: white;
+    color: white;
+    outline: 3px solid white;
+}
+form input::-webkit-input-placeholder{
+    color: white;
+    opacity: 70%;
+    font-size: 0.9rem;
+    letter-spacing: 1.75px;
+}
+.form-container .btn{
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    padding: unset;
+    border-radius: 100%;
+    border: 0;
+    background-color: #3F72AF;
+}
+.notFound{
+    padding: 2rem 0;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    display: none;
+}
+.notFound.active{
+    display: flex;
+}
+.notFound p{
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1.75px;
+}
+.redirectDiv{
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    z-index: 9999;
+    transition: all 300ms ease-in-out;
+}
+.redirectDiv:hover{
+    transform: scale(1.1);
+}
+.redirect{
+    all: unset;
+    position: relative;
+}
+.tooltip{
+    background-color: rgba(255, 255, 30, 0.712);
+    padding: 0.5rem;
+    position: absolute;
+    top: -6.5rem;
+    display: none;
+    right: 2px;
+    font-size: 0.75rem;
+}
+.redirect:hover > .tooltip{
+    transition: all 300ms ease-in-out;
+    display: block;
+}
