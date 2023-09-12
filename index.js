@@ -10,7 +10,6 @@ const notFoundContainer = document.querySelector(".notFound");
 
 // INITIAL VARIABLES
 let currentTab = locationTab;
-// const API_KEY = "801ce4095835ea9cb18e665dfcda22df";
 // CURRENT TAB ADDING CLASS ACTIVE
 currentTab.classList.add("current-tab");
 getFromSessionStorage();
