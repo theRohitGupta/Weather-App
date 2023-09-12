@@ -10,6 +10,7 @@ const notFoundContainer = document.querySelector(".notFound");
 
 // INITIAL VARIABLES
 let currentTab = locationTab;
+const API_KEY = process.env.API_KEY;
 // CURRENT TAB ADDING CLASS ACTIVE
 currentTab.classList.add("current-tab");
 getFromSessionStorage();
@@ -60,7 +61,7 @@ async function fetchUserWeatherInfo(coordinates){
 
     // API CALL
     try{
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`);
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
         const data = await res.json();
         if(res?.status == "404")
             throw err;
