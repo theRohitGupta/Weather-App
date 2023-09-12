@@ -60,7 +60,7 @@ async function fetchUserWeatherInfo(coordinates){
 
     // API CALL
     try{
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`);
         const data = await res.json();
         if(res?.status == "404")
             throw err;
