@@ -135,6 +135,7 @@ searchCityContainer.addEventListener("submit", (e) => {
 });
 
 async function fetchSearchWeatherInfo(city){
+    notFoundContainer.classList.remove("active");
     loadingScreenContainer.classList.add("active");
     coordinatesContainer.classList.remove("active");
     grantAccessContainer.classList.remove("active");
